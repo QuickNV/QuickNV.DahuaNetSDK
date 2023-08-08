@@ -14,11 +14,12 @@ var port = 37777;
 var user = "admin";
 var password = "123456";
 
+if (!NETClient.Init(null, IntPtr.Zero, null))
+    throw new IOException($"初始化失败！");
+Console.WriteLine("初始化成功！");
+
 try
-{
-    if(!NETClient.Init(null, IntPtr.Zero, null))
-        throw new IOException($"初始化失败！");
-    Console.WriteLine("初始化成功！");
+{    
     //登录
     Console.WriteLine("正在登录...");
     var m_DeviceInfo = new NET_DEVICEINFO_Ex();
@@ -31,12 +32,15 @@ try
     if (!result)
         throw new IOException($"退出登录失败，错误信息：{NETClient.GetLastError()}");
     Console.WriteLine("退出登录完成");
-    //清理
-    NETClient.Cleanup();
-    Console.WriteLine("清理完成");
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.ToString());
+}
+finally
+{
+    //清理
+    NETClient.Cleanup();
+    Console.WriteLine("清理完成");
 }
 ```

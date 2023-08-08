@@ -293,6 +293,14 @@ namespace Dahua.NetSDK
     public static class SDK_NEWDEVCONFIG_CMD
     {
         /// <summary>
+        /// 通道名称(对应 AV_CFG_ChannelName)
+        /// </summary>
+        public const string CFG_CMD_CHANNELTITLE = "ChannelTitle";
+        /// <summary>
+        /// RTSP的配置( 对应 CFG_RTSP_INFO_IN和CFG_RTSP_INFO_OUT )
+        /// </summary>
+        public const string CFG_CMD_RTSP = "RTSP";
+        /// <summary>
         /// ecording storage point mapping configuration (corresponding to NET_A_CFG_RECORDTOSTORAGEPOINT_INFO)
         /// 录像存储点映射配置(对应 NET_A_CFG_RECORDTOSTORAGEPOINT_INFO)
         /// </summary>
@@ -55108,7 +55116,7 @@ namespace Dahua.NetSDK
         public byte[] szUnit; // 标定单位
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
         public byte[] szCertificate; // 标定证书
-        NET_PERIOD_OF_VALIDITY stPeriodOfValidity; // 标定有效期
+        public NET_PERIOD_OF_VALIDITY stPeriodOfValidity; // 标定有效期
     };
 
     /// <summary>
@@ -59316,6 +59324,78 @@ namespace Dahua.NetSDK
         /// (机器人使用)表示设置的时间和当前时间的容差，单位为秒，如果设置的时间和当前的时间在容差范围内，则不更新当前时间。0 表示每次都修改。
         /// </summary>
         public int nTolerance;
+    }
+
+    public struct AV_CFG_ChannelName
+    {
+        public int nStructSize;
+        /// <summary>
+        /// 摄像头唯一编号
+        /// </summary>
+        public int nSerial;
+        /// <summary>
+        /// 通道名
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = SDK_CONST_NUM.NET_CFG_MAX_CHANNEL_NAME_LEN)]
+        public string szName;
+    }
+    
+    public struct CFG_RTSP_INFO_IN
+    {
+        public int nStructSize;
+        /// <summary>
+        /// 整个功能是否使能
+        /// </summary>
+        public bool bEnable;
+        /// <summary>
+        /// RTSP服务端口
+        /// </summary>
+        public int nPort;
+        /// <summary>
+        /// RTP起始端口
+        /// </summary>
+        public int nRtpStartPort;
+        /// <summary>
+        /// RTP结束端口
+        /// </summary>
+        public int nRtpEndPort;
+        /// <summary>
+        /// RtspOverHttp使能
+        /// </summary>
+        public bool bHttpEnable;
+        /// <summary>
+        /// RtspOverHttp端口
+        /// </summary>
+        public int nHttpPort;
+    }
+
+    public struct CFG_RTSP_INFO_OUT
+    {
+        public int nStructSize;
+        /// <summary>
+        /// 整个功能是否使能
+        /// </summary>
+        public bool bEnable;
+        /// <summary>
+        /// RTSP服务端口
+        /// </summary>
+        public int nPort;
+        /// <summary>
+        /// RTP起始端口
+        /// </summary>
+        public int nRtpStartPort;
+        /// <summary>
+        /// RTP结束端口
+        /// </summary>
+        public int nRtpEndPort;
+        /// <summary>
+        /// RtspOverHttp使能
+        /// </summary>
+        public bool bHttpEnable;
+        /// <summary>
+        /// RtspOverHttp端口
+        /// </summary>
+        public int nHttpPort;
     }
 
     /// <summary>
