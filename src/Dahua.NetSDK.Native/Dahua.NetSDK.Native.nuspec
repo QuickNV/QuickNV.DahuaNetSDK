@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata>
+    <id>Dahua.NetSDK.Native</id>
+    <version>3.57.2023.309</version>
+    <authors>Dahua</authors>
+    <owners>Dahua</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <icon>logo.png</icon>
+	<projectUrl>https://github.com/aaasoft/Dahua.NetSDK</projectUrl>
+    <description>Native binaries(v3.057.0000000.0.R.230309) for Dahua.NetSDK.Include win-x64,win-x86,linux-x64,linux-x86.</description>
+    <copyright>Public Domain</copyright>
+    <tags>Dahua,NetSDK</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard1.0" />
+    </dependencies>
+  </metadata>
+</package>
