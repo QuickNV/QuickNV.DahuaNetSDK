@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Authors>aaasoft</Authors>
+		<PackageProjectUrl>https://github.com/aaasoft/Dahua.NetSDK</PackageProjectUrl>
+		<PackageTags>Dahua, SDK</PackageTags>
+		<RepositoryUrl>https://github.com/aaasoft/Dahua.NetSDK.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>Dahua NetSDK原始API</Description>
+		<Version>3.57.2023.309</Version>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dahua.NetSDK.Native" Version="3.57.2023.309" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
