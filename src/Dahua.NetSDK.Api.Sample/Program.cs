@@ -1,13 +1,4 @@
-# Dahua.NetSDK.Api
-* Avaliable as [nuget](https://www.nuget.org/packages/Dahua.NetSDK.Api/) 
-
-* [![NuGet Downloads](https://img.shields.io/nuget/dt/Dahua.NetSDK.Api.svg)](https://www.nuget.org/packages/Dahua.NetSDK.Api/)
-
-* Api for Dahua NetSDK.
-
-示例
-```
-using Dahua.NetSDK.Api;
+﻿using Dahua.NetSDK.Api;
 
 var host = "127.0.0.1";
 var port = 37777;
@@ -42,4 +33,3 @@ catch (Exception ex)
 {
     Console.WriteLine(ex.ToString());
 }
-```

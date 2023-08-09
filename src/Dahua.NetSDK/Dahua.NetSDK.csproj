@@ -9,7 +9,7 @@
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>Dahua NetSDK原始API</Description>
-		<Version>3.57.2023.309</Version>
+		<Version>3.57.2023.809</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>

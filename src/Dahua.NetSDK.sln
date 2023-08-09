@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK", "Dahua.NetSD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK.Sample", "Dahua.NetSDK.Sample\Dahua.NetSDK.Sample.csproj", "{3C794248-85F7-4100-8A83-3343CE7E3874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dahua.NetSDK.Api", "Dahua.NetSDK.Api\Dahua.NetSDK.Api.csproj", "{1BAC7222-64FD-42F5-B69B-21CA4B084042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK.Api", "Dahua.NetSDK.Api\Dahua.NetSDK.Api.csproj", "{1BAC7222-64FD-42F5-B69B-21CA4B084042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dahua.NetSDK.Api.Sample", "Dahua.NetSDK.Api.Sample\Dahua.NetSDK.Api.Sample.csproj", "{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1BAC7222-64FD-42F5-B69B-21CA4B084042}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAC7222-64FD-42F5-B69B-21CA4B084042}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAC7222-64FD-42F5-B69B-21CA4B084042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

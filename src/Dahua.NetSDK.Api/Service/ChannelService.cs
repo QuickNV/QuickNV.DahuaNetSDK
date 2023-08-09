@@ -30,7 +30,7 @@ namespace Dahua.NetSDK.Api.Service
         {
             AV_CFG_ChannelName av_CFG_ChannelName = new AV_CFG_ChannelName();
             object refObj = av_CFG_ChannelName;
-            if (!NETClient.GetNewDevConfig(session.UserId, channel.Id, SDK_NEWDEVCONFIG_CMD.CFG_CMD_CHANNELTITLE, ref refObj, typeof(AV_CFG_ChannelName), 1000))
+            if (!NETClient.GetNewDevConfig(session.UserId, channel.Id, SDK_NEWDEVCONFIG_CMD.CFG_CMD_CHANNELTITLE, ref refObj, typeof(AV_CFG_ChannelName), session.CommandTimeout))
                 throw new DahuaException(NETClient.GetLastError());
             channel.Name = av_CFG_ChannelName.szName;
         }
