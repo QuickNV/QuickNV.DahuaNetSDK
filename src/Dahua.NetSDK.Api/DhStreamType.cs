@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hikvision.NetSDK.Api
+namespace Dahua.NetSDK.Api
 {
     public enum DhStreamType
     {

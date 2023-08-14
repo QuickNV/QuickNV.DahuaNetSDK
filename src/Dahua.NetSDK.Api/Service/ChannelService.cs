@@ -1,4 +1,4 @@
-﻿using Hikvision.NetSDK.Api;
+﻿using Dahua.NetSDK.Api;
 using System;
 using System.Collections.Generic;
 namespace Dahua.NetSDK.Api.Service

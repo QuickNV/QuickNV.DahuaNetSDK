@@ -26,7 +26,7 @@ namespace Dahua.NetSDK.Api
             if (!NETClient.Init(fDisConnectCallBack, IntPtr.Zero, null))
                 throw new DahuaException("初始化失败");
         }
-        
+
         public static void Cleanup()
         {
             NETClient.Cleanup();
@@ -61,7 +61,7 @@ namespace Dahua.NetSDK.Api
         /// 是否连接
         /// </summary>
         public bool Connected { get; private set; } = true;
-        
+
         /// <summary>
         /// 连接断开时
         /// </summary>
@@ -91,6 +91,17 @@ namespace Dahua.NetSDK.Api
             Logout();
         }
 
+        private ConfigService _ConfigService;
+        public ConfigService ConfigService
+        {
+            get
+            {
+                if (_ConfigService == null)
+                    _ConfigService = new ConfigService(this);
+                return _ConfigService;
+            }
+        }
+
         private ChannelService _ChannelService;
         public ChannelService ChannelService
         {
@@ -101,14 +112,15 @@ namespace Dahua.NetSDK.Api
                 return _ChannelService;
             }
         }
-        private ConfigService _ConfigService;
-        public ConfigService ConfigService
+
+        private PictureService _PictureService;
+        public PictureService PictureService
         {
             get
             {
-                if (_ConfigService == null)
-                    _ConfigService = new ConfigService(this);
-                return _ConfigService;
+                if (_PictureService == null)
+                    _PictureService = new PictureService(this);
+                return _PictureService;
             }
         }
     }
