@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dahua.NetSDK.Api
+namespace QuickNV.DahuaNetSDK.Api
 {
     public enum DhStreamType
     {

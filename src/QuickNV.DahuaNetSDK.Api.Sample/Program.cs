@@ -1,4 +1,4 @@
-﻿using Dahua.NetSDK.Api;
+﻿using QuickNV.DahuaNetSDK.Api;
 
 var host = "127.0.0.1";
 var port = 37777;

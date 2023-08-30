@@ -1,7 +1,7 @@
-﻿using Dahua.NetSDK.Api;
+﻿using QuickNV.DahuaNetSDK.Api;
 using System;
 using System.Collections.Generic;
-namespace Dahua.NetSDK.Api.Service
+namespace QuickNV.DahuaNetSDK.Api.Service
 {
     public class ChannelService
     {

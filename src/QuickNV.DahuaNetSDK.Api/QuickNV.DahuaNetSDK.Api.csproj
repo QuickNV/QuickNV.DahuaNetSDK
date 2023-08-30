@@ -3,13 +3,13 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Authors>aaasoft</Authors>
-		<PackageProjectUrl>https://github.com/aaasoft/Dahua.NetSDK</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/QuickNV/QuickNV.DahuaNetSDK</PackageProjectUrl>
 		<PackageTags>Dahua, SDK</PackageTags>
-		<RepositoryUrl>https://github.com/aaasoft/Dahua.NetSDK.git</RepositoryUrl>
+		<RepositoryUrl>https://github.com/QuickNV/QuickNV.DahuaNetSDK.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Description>Dahua NetSDK原始API</Description>
-		<Version>3.57.2023.809</Version>
+		<Description>Dahua NetSDK二次开发API</Description>
+		<Version>1.0.0</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Dahua.NetSDK.Native" Version="3.57.2023.309" />
+		<ProjectReference Include="..\QuickNV.DahuaNetSDK\QuickNV.DahuaNetSDK.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

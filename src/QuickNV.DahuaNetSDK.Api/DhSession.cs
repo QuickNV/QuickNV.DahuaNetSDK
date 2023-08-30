@@ -1,8 +1,8 @@
-﻿using Dahua.NetSDK.Api.Service;
+﻿using QuickNV.DahuaNetSDK.Api.Service;
 using System;
 using System.Collections.Generic;
 
-namespace Dahua.NetSDK.Api
+namespace QuickNV.DahuaNetSDK.Api
 {
     public class DhSession : IDisposable
     {

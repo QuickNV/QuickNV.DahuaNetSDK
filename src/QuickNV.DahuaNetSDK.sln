@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK", "Dahua.NetSDK\Dahua.NetSDK.csproj", "{78BD438A-1AAF-47C2-915C-415485701392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK", "QuickNV.DahuaNetSDK\QuickNV.DahuaNetSDK.csproj", "{78BD438A-1AAF-47C2-915C-415485701392}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK.Sample", "Dahua.NetSDK.Sample\Dahua.NetSDK.Sample.csproj", "{3C794248-85F7-4100-8A83-3343CE7E3874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK.Sample", "QuickNV.DahuaNetSDK.Sample\QuickNV.DahuaNetSDK.Sample.csproj", "{3C794248-85F7-4100-8A83-3343CE7E3874}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dahua.NetSDK.Api", "Dahua.NetSDK.Api\Dahua.NetSDK.Api.csproj", "{1BAC7222-64FD-42F5-B69B-21CA4B084042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK.Api", "QuickNV.DahuaNetSDK.Api\QuickNV.DahuaNetSDK.Api.csproj", "{1BAC7222-64FD-42F5-B69B-21CA4B084042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dahua.NetSDK.Api.Sample", "Dahua.NetSDK.Api.Sample\Dahua.NetSDK.Api.Sample.csproj", "{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickNV.DahuaNetSDK.Api.Sample", "QuickNV.DahuaNetSDK.Api.Sample\QuickNV.DahuaNetSDK.Api.Sample.csproj", "{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

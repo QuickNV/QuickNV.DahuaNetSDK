@@ -1,13 +1,13 @@
-﻿# Dahua.NetSDK
-* Avaliable as [nuget](https://www.nuget.org/packages/Dahua.NetSDK/) 
+﻿# QuickNV.DahuaNetSDK
+* Avaliable as [nuget](https://www.nuget.org/packages/QuickNV.DahuaNetSDK/) 
 
-* [![NuGet Downloads](https://img.shields.io/nuget/dt/Dahua.NetSDK.svg)](https://www.nuget.org/packages/Dahua.NetSDK/)
+* [![NuGet Downloads](https://img.shields.io/nuget/dt/QuickNV.DahuaNetSDK.svg)](https://www.nuget.org/packages/QuickNV.DahuaNetSDK/)
 
 * Dahua NetSDK.
 
 示例
 ```
-using Dahua.NetSDK;
+using QuickNV.DahuaNetSDK;
 
 var host = "127.0.0.1";
 var port = 37777;

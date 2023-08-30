@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace Dahua.NetSDK
+namespace QuickNV.DahuaNetSDK
 {
     /// <summary>
     /// 存放长度相关的常量

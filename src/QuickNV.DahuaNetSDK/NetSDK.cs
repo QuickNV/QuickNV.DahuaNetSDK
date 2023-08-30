@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 
-namespace Dahua.NetSDK
+namespace QuickNV.DahuaNetSDK
 {
     public static class NETClient
     {

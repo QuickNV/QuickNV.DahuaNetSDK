@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Dahua.NetSDK.Api.Service
+namespace QuickNV.DahuaNetSDK.Api.Service
 {
     public class PictureService
     {

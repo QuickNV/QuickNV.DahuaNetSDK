@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dahua.NetSDK\Dahua.NetSDK.csproj" />
+    <ProjectReference Include="..\QuickNV.DahuaNetSDK\QuickNV.DahuaNetSDK.csproj" />
   </ItemGroup>
 
 </Project>

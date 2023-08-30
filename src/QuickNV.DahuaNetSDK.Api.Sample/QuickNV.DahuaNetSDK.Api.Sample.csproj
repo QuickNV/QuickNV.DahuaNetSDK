@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Dahua.NetSDK.Api\Dahua.NetSDK.Api.csproj" />
+		<ProjectReference Include="..\QuickNV.DahuaNetSDK.Api\QuickNV.DahuaNetSDK.Api.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Dahua.NetSDK
+namespace QuickNV.DahuaNetSDK
 {
     internal static class OriginalSDK
     {

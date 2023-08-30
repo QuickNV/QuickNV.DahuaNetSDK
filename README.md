@@ -1,2 +1,2 @@
-# Dahua.NetSDK
-Dahua NetSDK
+# QuickNV.DahuaNetSDK
+QuickNV.DahuaNetSDK
