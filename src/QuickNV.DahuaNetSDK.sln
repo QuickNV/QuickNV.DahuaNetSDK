@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK.Sample"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK.Api", "QuickNV.DahuaNetSDK.Api\QuickNV.DahuaNetSDK.Api.csproj", "{1BAC7222-64FD-42F5-B69B-21CA4B084042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickNV.DahuaNetSDK.Api.Sample", "QuickNV.DahuaNetSDK.Api.Sample\QuickNV.DahuaNetSDK.Api.Sample.csproj", "{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNV.DahuaNetSDK.Api.Sample", "QuickNV.DahuaNetSDK.Api.Sample\QuickNV.DahuaNetSDK.Api.Sample.csproj", "{D416D8E9-3D9A-4AAF-9813-72A522D57A3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
