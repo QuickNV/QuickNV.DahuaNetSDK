@@ -1,11 +1,14 @@
-﻿using Dahua.Api;
+﻿using System;
+using System.Collections;
+using System.IO;
+using System.Threading.Tasks;
+using Dahua.Api;
 
-var host = "192.168.1.63";
+var host = "192.168.1.64";
 var port = 37777;
 var user = "admin";
 var password = "password";
 string DateFormat = "yyyyMMdd_HHmmss";
-string TimeFormat = "HHmmss";
 
 try
 {
@@ -24,28 +27,28 @@ try
     var videos = session.VideoService.GetVideos(0, DateTime.Today, DateTime.Now);
 
 
-    Console.WriteLine($"Found {videos.Length} videos");
+    Console.WriteLine($"Found {videos.Count} videos");
     foreach (var video in videos)
     {
+        Console.WriteLine(video.Name);
+        var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.dav";
 
-        var name = $"{video.starttime.ToDateTime().ToString(DateFormat)}_{video.endtime.ToDateTime().ToString(TimeFormat)}.dav";
-
-        var destinationPath = Path.Combine("C:\\Users\\vkhmelovskyi\\Desktop\\bin", name);
+        var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", "bin", name);
         var downloadId = session.VideoService.DownloadByRecordFile(video, destinationPath);
         if (downloadId > 0)
         {
-            Console.WriteLine($"Downloding {destinationPath}");
+            Console.WriteLine($"Downloading {destinationPath}");
             do
             {
                 await Task.Delay(5000);
                 var downloadProgress = session.VideoService.GetDownloadPos(downloadId);
-                Console.WriteLine($"Downloding {downloadProgress} %");
-                if (downloadProgress.nDownLoadSize == downloadProgress.nTotalSize)
+                Console.WriteLine($"Downloading {downloadProgress} %");
+                if (downloadProgress.downloadSize == downloadProgress.totalSize)
                 {
                     session.VideoService.StopDownload(downloadId);
                     break;
                 }
-                else if (!downloadProgress.blnReturnValue)
+                else if (!downloadProgress.success)
                 {
                     throw new InvalidOperationException($"UpdateDownloadProgress failed, progress value = {downloadProgress}");
                 }
@@ -57,8 +60,7 @@ try
     }
 
 
-    session.ChannelService.RefreshChannelsName();
-    Console.WriteLine("Channel:" + string.Join(",", session.ChannelService.AllChannels.Select(t => $"Channel{t.Id}_{t.Name}")));
+    Console.WriteLine("Channel:" + string.Join(",", session.AllChannels.Select(t => $"Channel{t.Id}_{t.Name}")));
 
     //sign out
     session.Logout();

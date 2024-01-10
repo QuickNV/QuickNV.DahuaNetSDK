@@ -1,10 +1,13 @@
-﻿using System;
-
-namespace Dahua.Api.Struct.Config
+﻿namespace Dahua.Api.Struct.Config
 {
-    // CLIENT_GetMachineName 入参
-    public struct NET_IN_GET_MACHINENAME_INFO
+    /// <summary>
+    /// CLIENT_GetMachineName input parameter
+    /// </summary>
+    internal struct NET_IN_GET_MACHINENAME_INFO
     {
-        public uint dwSize;                                 // 结构体大小
+        /// <summary>
+        /// The dw size
+        /// </summary>
+        public uint dwSize;
     }
 }

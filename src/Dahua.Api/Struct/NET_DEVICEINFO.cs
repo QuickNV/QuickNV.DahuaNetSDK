@@ -2,43 +2,41 @@
 
 namespace Dahua.Api.Struct
 {
-
     /// <summary>
-    /// НшВзЙи±ёРЕПў
+    /// NET_DEVICEINFO
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct NET_DEVICEINFO
+    internal struct NET_DEVICEINFO
     {
         /// <summary>
-        /// РтБРєЕ[і¤¶И48]
+        /// The serial number
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
         public byte[] sSerialNumber;
 
         /// <summary>
-        /// DVR±ЁѕЇКдИлёцКэ
+        /// The by alarm in port number
         /// </summary>
         public byte byAlarmInPortNum;
 
         /// <summary>
-        /// DVR±ЁѕЇКдіцёцКэ
+        /// The by alarm out port number
         /// </summary>
         public byte byAlarmOutPortNum;
 
         /// <summary>
-        /// DVRУІЕМёцКэ
+        /// The by disk number
         /// </summary>
         public byte byDiskNum;
 
         /// <summary>
-        /// DVRАаРН
+        /// The by DVR type
         /// </summary>
         public byte byDVRType;
 
         /// <summary>
-        /// DVRНЁµАёцКэ
+        /// The by chan number
         /// </summary>
         public byte byChanNum;
-
     }
 }

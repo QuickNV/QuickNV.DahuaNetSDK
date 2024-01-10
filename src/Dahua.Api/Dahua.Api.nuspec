@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>vov4uk</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/vov4uk/Dahua.Api</projectUrl>
+    <repository type="git" url="https://github.com/vov4uk/Dahua.Api" branch="main" />
+    <description>Wrapper over Dahua SDK. It allows login, fetch videso list, download, get config list and more</description>
+    <releaseNotes>Initial release. Added base functionality</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Dahua, SDK, ipcamera, photo, video</tags>
+      <contentFiles>
+          <!-- this sets "CopyIfNewer" on all files in the project that references this package -->
+          <files include="**/*" buildAction="None" copyToOutput="true"/>
+      </contentFiles>
+      <dependencies>
+          <group targetFramework=".NETStandard2.1"/>
+      </dependencies>
+  </metadata>
+  <files>
+      <file src="bin\$configuration$\netstandard2.1\SDK\*.*" target="contentFiles\any\any\SDK"/>
+  </files>
+</package>

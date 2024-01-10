@@ -1,10 +1,21 @@
 ﻿namespace Dahua.Api.Struct.Config
 {
-    // 外设类型
-    public enum EM_PERIPHERAL_TYPE
+    /// <summary>
+    /// Peripheral
+    /// </summary>
+    internal enum EM_PERIPHERAL_TYPE
     {
-        NUKNOWN,                  // 未知
-        ASG_CONTROLLER,           // 闸机控制板
-        ASG_MOTOR,                // 闸机电机驱动
+        /// <summary>
+        /// unknown
+        /// </summary>
+        UNKNOWN,
+        /// <summary>
+        /// Gates control board
+        /// </summary>
+        ASG_CONTROLLER,
+        /// <summary>
+        /// Driver of the gate motor
+        /// </summary>
+        ASG_MOTOR,
     }
 }

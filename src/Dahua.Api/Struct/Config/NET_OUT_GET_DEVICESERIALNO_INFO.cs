@@ -2,11 +2,19 @@
 
 namespace Dahua.Api.Struct.Config
 {
-    // CLIENT_GetDeviceSerialNo 出参
-    public struct NET_OUT_GET_DEVICESERIALNO_INFO
+    /// <summary>
+    /// CLIENT_GetDeviceSerialNo output
+    /// </summary>
+    internal struct NET_OUT_GET_DEVICESERIALNO_INFO
     {
-        public uint dwSize;                               // 结构体大小
+        /// <summary>
+        /// Structure
+        /// </summary>
+        public uint dwSize;
+        /// <summary>
+        /// serial number
+        /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string szSN;                              // 序列号
+        public string szSN;
     }
 }

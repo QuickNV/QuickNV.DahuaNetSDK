@@ -1,16 +1,22 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Dahua.Api.Struct.Channel
+namespace Dahua.Api.Struct.Config
 {
-    public struct AV_CFG_ChannelName
+    /// <summary>
+    /// AV_CFG_ChannelName
+    /// </summary>
+    internal struct AV_CFG_ChannelName
     {
+        /// <summary>
+        /// The n structure size
+        /// </summary>
         public int nStructSize;
         /// <summary>
-        /// 摄像头唯一编号
+        /// The unique number of the camera
         /// </summary>
         public int nSerial;
         /// <summary>
-        /// 通道名
+        /// Channel name
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
         public string szName;

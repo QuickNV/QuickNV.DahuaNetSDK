@@ -1,6 +1,9 @@
 ﻿namespace Dahua.Api.Struct.Config
 {
-    public struct CFG_RTSP_INFO_OUT
+    /// <summary>
+    /// CFG_RTSP_INFO_OUT
+    /// </summary>
+    internal struct CFG_RTSP_INFO_OUT
     {
         /// <summary>
         /// The structure size

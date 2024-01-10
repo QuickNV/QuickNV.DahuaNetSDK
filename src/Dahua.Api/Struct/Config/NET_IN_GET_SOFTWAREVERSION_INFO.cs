@@ -3,8 +3,11 @@
     /// <summary>
     /// GetSoftwareVersion input parameter
     /// </summary>
-    public struct NET_IN_GET_SOFTWAREVERSION_INFO
+    internal struct NET_IN_GET_SOFTWAREVERSION_INFO
     {
+        /// <summary>
+        /// The dw size
+        /// </summary>
         public uint dwSize;
     }
 }

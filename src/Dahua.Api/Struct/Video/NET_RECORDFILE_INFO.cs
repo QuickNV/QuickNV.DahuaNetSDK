@@ -2,46 +2,42 @@
 
 namespace Dahua.Api.Struct.Video
 {
-
     /// <summary>
-    /// ВјПсОДјюРЕПў
+    /// NET_RECORDFILE_INFO
     /// </summary>
-    public struct NET_RECORDFILE_INFO
+    internal struct NET_RECORDFILE_INFO
     {
         /// <summary>
-        /// НЁµАєЕ
+        /// The ch
         /// </summary>
         public uint ch;
         /// <summary>
-        /// ОДјюГы
+        /// The filename
         /// </summary>
-        //[MarshalAs(UnmanagedType.ByValArray, ArraySubType = UnmanagedType.ByValTStr, SizeConst = 128)]
-        //public char[] filename;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
         public byte[] filename;
-        //public string filename;
         /// <summary>
-        /// ОДјюі¤¶И
+        /// The size
         /// </summary>
         public uint size;
         /// <summary>
-        /// їЄКјК±јд
+        /// The starttime
         /// </summary>
         public NET_TIME starttime;
         /// <summary>
-        /// ЅбКшК±јд
+        /// The endtime
         /// </summary>
         public NET_TIME endtime;
         /// <summary>
-        /// ґЕЕМєЕ
+        /// The driveno
         /// </summary>
         public uint driveno;
         /// <summary>
-        /// ЖрКјґШєЕ
+        /// The startcluster
         /// </summary>
         public uint startcluster;
         /// <summary>
-        /// ВјПсОДјюАаРН  0ЈєЖХНЁВјПсЈ»1Јє±ЁѕЇВј
+        /// The n record file type
         /// </summary>
         public int nRecordFileType;
     }

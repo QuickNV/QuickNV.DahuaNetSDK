@@ -1,15 +1,25 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace Dahua.Api.Struct.Config
 {
-    // 设备的外设软件版本
-    public struct NET_PERIPHERAL_VERSIONS
+    /// <summary>
+    /// Device's peripheral software version
+    /// </summary>
+    internal struct NET_PERIPHERAL_VERSIONS
     {
+        /// <summary>
+        /// Corresponding version information of the peripherals
+        /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-        public string szVersion;// 对应外设的版本信息
-        public EM_PERIPHERAL_TYPE emPeripheralType;       // 外设类型
+        public string szVersion;
+        /// <summary>
+        /// Peripheral
+        /// </summary>
+        public EM_PERIPHERAL_TYPE emPeripheralType;
+        /// <summary>
+        /// Retain byte
+        /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 252)]
-        public byte[] byReserved;                     // 保留字节
+        public byte[] byReserved;
     }
 }

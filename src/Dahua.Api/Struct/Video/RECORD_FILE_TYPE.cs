@@ -1,32 +1,32 @@
 ﻿namespace Dahua.Api.Struct.Video
 {
     /// <summary>
-    /// 录像文件类型
+    /// Video file type
     /// </summary>
-    public enum RECORD_FILE_TYPE
+    internal enum RECORD_FILE_TYPE
     {
         /// <summary>
-        /// 0:所有录像文件
+        /// 0: All video files
         /// </summary>
         ALLRECORDFILE,
         /// <summary>
-        /// 1:外部报警
+        /// 1:External alarm
         /// </summary>
         OUTALARM,
         /// <summary>
-        /// 2:动态检测报警
+        /// 2:Dynamic testing alarm
         /// </summary>
         DYNAMICSCANALARM,
         /// <summary>
-        /// 3:所有报警
+        /// 3:All the alarm
         /// </summary>
         ALLALARM,
         /// <summary>
-        /// 4:卡号查询
+        /// 4:Card number query
         /// </summary>
         CARDNOSEACH,
         /// <summary>
-        /// 5:组合条件查询
+        /// 5:Combining condition query
         /// </summary>
         COMBINEDSEACH
     }

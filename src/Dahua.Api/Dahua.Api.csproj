@@ -1,32 +1,67 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>Dahua.Api</AssemblyName>
+        <RootNamespace>Dahua.Api</RootNamespace>
+        <Authors>vov4uk</Authors>
+        <PackageProjectUrl>https://github.com/vov4uk/Dahua.Api</PackageProjectUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>Dahua, SDK, ip camera, photo, video</PackageTags>
+        <RepositoryUrl>https://github.com/vov4uk/Dahua.Api.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Wrapper over Dahua SDK. It allows login, fetch videso list, download, get config list and more</Description>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <Version>1.0.0</Version>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <NoWarn>NU5100</NoWarn>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>False</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
 
   <ItemGroup>
-    <Content Include="SDK\avnetsdk.dll">
+    <None Update="SDK\avnetsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\dhconfigsdk.dll">
+    </None>
+    <None Update="SDK\dhconfigsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\dhnetsdk.dll">
+    </None>
+    <None Update="SDK\dhnetsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\dhplay.dll">
+    </None>
+    <None Update="SDK\dhplay.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\Infra.dll">
+    </None>
+    <None Update="SDK\Infra.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\IvsDrawer.dll">
+    </None>
+    <None Update="SDK\IvsDrawer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SDK\StreamConvertor.dll">
+    </None>
+    <None Update="SDK\StreamConvertor.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
 
 </Project>
