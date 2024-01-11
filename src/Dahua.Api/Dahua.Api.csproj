@@ -11,12 +11,13 @@
         <RepositoryUrl>https://github.com/vov4uk/Dahua.Api.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Description>Wrapper over Dahua SDK. It allows login, fetch videso list, download, get config list and more</Description>
+        <Description>Wrapper over Dahua NetSDK (v3.057.0000000.0.R.230309, win-x64). It allows login, fetch videso list, download, get config list and more.</Description>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
         <Version>1.0.0</Version>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <NoWarn>NU5100</NoWarn>
+        <PackageIcon>logo.png</PackageIcon>
+        <NoWarn>NU5100;CS0649</NoWarn>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
 
@@ -25,20 +26,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\..\LICENSE">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
-        <None Include="..\..\README.md">
-            <Pack>True</Pack>
-            <PackagePath>\</PackagePath>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+        <None Include="..\..\LICENSE" Link="LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\..\logo.png" Pack="true" PackagePath="" />
+        <None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="" />
     </ItemGroup>
-    
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="SDK\avnetsdk.dll">

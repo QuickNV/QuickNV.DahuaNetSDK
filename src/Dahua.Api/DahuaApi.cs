@@ -12,7 +12,7 @@ namespace Dahua.Api
     /// <summary>
     /// DahuaApi
     /// </summary>
-    public class DahuaApi
+    public class DahuaApi : IDisposable
     {
         /// <summary>
         /// Disconnection callback function, which calls back the devices that have been disconnected from the current network. It does not call back the devices that are actively disconnected by calling the Cl IENT Log Out() function of the SDK.
@@ -119,7 +119,6 @@ namespace Dahua.Api
             }
         }
 
-
         /// <summary>
         /// Initialize digital video recorder
         /// </summary>
@@ -182,6 +181,15 @@ namespace Dahua.Api
             UriBuilder uriBuilder = new UriBuilder() { Scheme = "rtsp", Host = this.Host, Port = rtspPort, UserName = userName, Password = password, Path = $"/cam/realmonitor?channel={channelId}&subtype={(int)streamType}" };
             return uriBuilder.ToString();
         }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Logout();
+        }
+
         private void OnDisconnected()
         {
             Connected = false;
