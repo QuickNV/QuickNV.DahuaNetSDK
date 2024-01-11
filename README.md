@@ -24,7 +24,7 @@ session.Logout();
 DahuaApi.Cleanup();
 ```
 
-Print list of IP channels for NVR (IP Camera use session.Device.DefaultIpChannel)
+Print list of IP channels for NVR (IP Camera use hikapi.DefaultIpChannel)
 ```cs
 Console.WriteLine("Channel:" + string.Join(",", session.AllChannels.Select(t => $"Channel{t.Id}_{t.Name}")));
 ```
