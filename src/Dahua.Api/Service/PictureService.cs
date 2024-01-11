@@ -12,8 +12,12 @@ namespace Dahua.Api.Service
     /// </summary>
     public class PictureService : IPictureService
     {
-        private readonly DahuaApi session;
-        internal PictureService(DahuaApi session)
+        private readonly IDahuaApi session;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PictureService"/> class.
+        /// </summary>
+        /// <param name="session">The session.</param>
+        public PictureService(IDahuaApi session)
         {
             this.session = session;
         }

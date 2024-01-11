@@ -29,6 +29,11 @@ namespace Dahua.Api
         private IPictureService pictureService;
         private IVideoService videoService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DahuaApi"/> class.
+        /// </summary>
+        public DahuaApi() { }
+
         private DahuaApi(long userId, string host, NET_DEVICEINFO deviceInfo)
         {
             UserId = userId;

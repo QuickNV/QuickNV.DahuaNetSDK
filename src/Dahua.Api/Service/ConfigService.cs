@@ -13,8 +13,12 @@ namespace Dahua.Api.Service
     /// </summary>
     public class ConfigService : IConfigService
     {
-        private readonly DahuaApi session;
-        internal ConfigService(DahuaApi session)
+        private readonly IDahuaApi session;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigService"/> class.
+        /// </summary>
+        /// <param name="session">The session.</param>
+        public ConfigService(IDahuaApi session)
         {
             this.session = session;
         }

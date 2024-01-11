@@ -11,9 +11,18 @@ namespace Dahua.Api.Abstractions
     public interface IDahuaApi
     {
         /// <summary>
+        /// Gets or sets the command timeout.
+        /// </summary>
+        /// <value>
+        /// The command timeout.
+        /// </value>
+
+        int CommandTimeout { get; set; }
+        /// <summary>
         /// Occurs when [disconnected].
         /// </summary>
         event EventHandler Disconnected;
+
         /// <summary>
         /// Gets all channels.
         /// </summary>

@@ -35,9 +35,16 @@ namespace Dahua.Api.Service
         /// </summary>
         private fDownLoadPosCallBack downLoadFun;
 
-        private DahuaApi session;
+        /// <summary>
+        /// The session
+        /// </summary>
+        private readonly IDahuaApi session;
 
-        internal VideoService(DahuaApi session)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoService"/> class.
+        /// </summary>
+        /// <param name="session">The session.</param>
+        public VideoService(IDahuaApi session)
         {
             this.session = session;
             downLoadFun = new fDownLoadPosCallBack(DownLoadPosFun);
