@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Dahua.Api.Abstractions;
 using Dahua.Api.Helpers;
 using Dahua.Api.Struct;
 using Dahua.Api.Struct.Config;
@@ -10,9 +11,9 @@ namespace Dahua.Api.Service
     /// <summary>
     /// ConfigService
     /// </summary>
-    public class ConfigService
+    public class ConfigService : IConfigService
     {
-        private DahuaApi session;
+        private readonly DahuaApi session;
         internal ConfigService(DahuaApi session)
         {
             this.session = session;

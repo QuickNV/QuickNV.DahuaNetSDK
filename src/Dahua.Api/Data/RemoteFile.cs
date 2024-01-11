@@ -4,7 +4,7 @@ using System;
 namespace Dahua.Api.Data
 {
     /// <summary>
-    /// 
+    /// Remote File
     /// </summary>
     /// <seealso cref="Dahua.Api.Data.IRemoteFile" />
     public class RemoteFile: IRemoteFile
@@ -16,12 +16,20 @@ namespace Dahua.Api.Data
             Original = findData;
         }
 
-        /// <summary>Gets or sets the name.</summary>
-        /// <value>The name.</value>
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name => System.Text.Encoding.UTF8.GetString(Original.filename).TrimEnd('\0');
 
-        /// <summary>Gets or sets the date.</summary>
-        /// <value>The date.</value>
+        /// <summary>
+        /// Gets or sets the date.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
         public DateTime Date => Original.starttime.ToDateTime();
 
         /// <summary>

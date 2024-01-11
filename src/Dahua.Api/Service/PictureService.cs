@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Dahua.Api.Abstractions;
 using Dahua.Api.Helpers;
 using Dahua.Api.Struct.Picture;
 using static Dahua.Api.DHConsts;
@@ -9,7 +10,7 @@ namespace Dahua.Api.Service
     /// <summary>
     /// Picture Service
     /// </summary>
-    public class PictureService
+    public class PictureService : IPictureService
     {
         private readonly DahuaApi session;
         internal PictureService(DahuaApi session)

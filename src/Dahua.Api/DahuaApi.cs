@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using Dahua.Api.Abstractions;
 using Dahua.Api.Data;
 using Dahua.Api.Helpers;
 using Dahua.Api.Service;
@@ -12,7 +13,7 @@ namespace Dahua.Api
     /// <summary>
     /// DahuaApi
     /// </summary>
-    public class DahuaApi : IDisposable
+    public class DahuaApi : IDahuaApi, IDisposable
     {
         /// <summary>
         /// Disconnection callback function, which calls back the devices that have been disconnected from the current network. It does not call back the devices that are actively disconnected by calling the Cl IENT Log Out() function of the SDK.
@@ -24,9 +25,9 @@ namespace Dahua.Api
         private delegate void fDisConnect(int lLoginID, StringBuilder pchDVRIP, int nDVRPort, IntPtr dwUser);
 
         private static bool initialized = false;
-        private ConfigService configService;
-        private PictureService pictureService;
-        private VideoService videoService;
+        private IConfigService configService;
+        private IPictureService pictureService;
+        private IVideoService videoService;
 
         private DahuaApi(long userId, string host, NET_DEVICEINFO deviceInfo)
         {
@@ -83,7 +84,7 @@ namespace Dahua.Api
         /// <value>
         /// The video service.
         /// </value>
-        public VideoService VideoService
+        public IVideoService VideoService
         {
             get
             {
@@ -97,7 +98,7 @@ namespace Dahua.Api
         /// <value>
         /// The picture service.
         /// </value>
-        public PictureService PictureService
+        public IPictureService PictureService
         {
             get
             {
@@ -111,7 +112,7 @@ namespace Dahua.Api
         /// <value>
         /// The configuration service.
         /// </value>
-        public ConfigService ConfigService
+        public IConfigService ConfigService
         {
             get
             {

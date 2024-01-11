@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Dahua.Api.Abstractions;
 using Dahua.Api.Data;
 using Dahua.Api.Helpers;
 using Dahua.Api.Struct;
@@ -13,7 +14,7 @@ namespace Dahua.Api.Service
     /// <summary>
     /// Video Service
     /// </summary>
-    public class VideoService
+    public class VideoService : IVideoService
     {
         /// <summary>
         /// Progress callback function
