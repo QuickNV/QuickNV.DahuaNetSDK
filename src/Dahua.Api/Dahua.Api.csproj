@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>Dahua.Api</AssemblyName>
+        <RootNamespace>Dahua.Api</RootNamespace>
+        <Authors>vov4uk</Authors>
+        <PackageProjectUrl>https://github.com/vov4uk/Dahua.Api</PackageProjectUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>Dahua, SDK, ip camera, photo, video</PackageTags>
+        <RepositoryUrl>https://github.com/vov4uk/Dahua.Api.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Wrapper over Dahua NetSDK (v3.057.0000000.0.R.230309, win-x64). It allows login, fetch videso list, download, get config list and more.</Description>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <Version>1.0.0</Version>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>logo.png</PackageIcon>
+        <NoWarn>NU5100;CS0649</NoWarn>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>False</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LICENSE" Link="LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\..\logo.png" Pack="true" PackagePath="" />
+        <None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DahuaSDK\avnetsdk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\dhconfigsdk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\dhnetsdk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\dhplay.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\Infra.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\IvsDrawer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DahuaSDK\StreamConvertor.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
