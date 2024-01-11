@@ -14,6 +14,7 @@
     <copyright>$copyright$</copyright>
     <tags>Dahua, SDK, ipcamera, photo, video</tags>
     <icon>images\logo.png</icon>
+    <readme>docs\README.md</readme>
      <contentFiles>
          <!-- this sets "CopyIfNewer" on all files in the project that references this package -->
          <files include="**/*" buildAction="None" copyToOutput="true"/>
@@ -25,5 +26,6 @@
   <files>
       <file src="bin\$configuration$\netstandard2.1\DahuaSDK\*.*" target="contentFiles\any\any\DahuaSDK"/>
       <file src="..\..\logo.png" target="images\" />
+      <file src="..\..\README.md" target="docs\" />
   </files>
 </package>

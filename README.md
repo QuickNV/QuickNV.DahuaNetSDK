@@ -69,33 +69,32 @@ var videos = session.VideoService.FindFiles(DateTime.Today, DateTime.Now, channe
 
 Download video
 ```cs
-    foreach (var video in videos)
+foreach (var video in videos)
+{
+    Console.WriteLine(video.Name);
+    var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.mp4";
+    var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", name);
+    var downloadId = session.VideoService.StartDownloadFile(video, destinationPath);
+    if (downloadId > 0)
     {
-        Console.WriteLine(video.Name);
-        var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.mp4";
-
-        var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", name);
-        var downloadId = session.VideoService.StartDownloadFile(video, destinationPath);
-        if (downloadId > 0)
+        Console.WriteLine($"Downloading {destinationPath}");
+        do
         {
-            Console.WriteLine($"Downloading {destinationPath}");
-            do
+            await Task.Delay(5000);
+            var downloadProgress = session.VideoService.GetDownloadPosition(downloadId);
+            Console.WriteLine($"Downloading {downloadProgress} %");
+            if (downloadProgress.downloadSize == downloadProgress.totalSize)
             {
-                await Task.Delay(5000);
-                var downloadProgress = session.VideoService.GetDownloadPosition(downloadId);
-                Console.WriteLine($"Downloading {downloadProgress} %");
-                if (downloadProgress.downloadSize == downloadProgress.totalSize)
-                {
-                    session.VideoService.StopDownloadFile(downloadId);
-                    break;
-                }
-                else if (!downloadProgress.success)
-                {
-                    throw new InvalidOperationException($"UpdateDownloadProgress failed, progress value = {downloadProgress}");
-                }
+                session.VideoService.StopDownloadFile(downloadId);
+                break;
             }
-            while (true);
-            Console.WriteLine($"Downloaded {destinationPath}");
+            else if (!downloadProgress.success)
+            {
+                throw new InvalidOperationException($"UpdateDownloadProgress failed, progress value = {downloadProgress}");
+            }
         }
+        while (true);
+        Console.WriteLine($"Downloaded {destinationPath}");
     }
+}
 ```
