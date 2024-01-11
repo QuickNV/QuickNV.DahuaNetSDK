@@ -32,25 +32,25 @@
     </ItemGroup>
 
   <ItemGroup>
-    <None Update="SDK\avnetsdk.dll">
+    <None Update="DahuaSDK\avnetsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\dhconfigsdk.dll">
+    <None Update="DahuaSDK\dhconfigsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\dhnetsdk.dll">
+    <None Update="DahuaSDK\dhnetsdk.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\dhplay.dll">
+    <None Update="DahuaSDK\dhplay.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\Infra.dll">
+    <None Update="DahuaSDK\Infra.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\IvsDrawer.dll">
+    <None Update="DahuaSDK\IvsDrawer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SDK\StreamConvertor.dll">
+    <None Update="DahuaSDK\StreamConvertor.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

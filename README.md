@@ -58,13 +58,13 @@ session.ConfigService.SetTime(currentTime);
 # Video service
 Get videos list from IP Camera (default IP channel). Returns IReadOnlyCollection<[RemoteFile](https://github.com/vov4uk/Dahua.Api/blob/main/src/Dahua.Api/Data/RemoteFile.cs)>
 ```cs
-var videos = session.VideoService.GetVideos(DateTime.Today, DateTime.Now);
+var videos = session.VideoService.FindFiles(DateTime.Today, DateTime.Now);
 ```
 
 Get videos list from IP Camera (specific IP channel)
 ```cs
 int channel = 2;
-var videos = session.VideoService.GetVideos(channel, DateTime.Today, DateTime.Now);
+var videos = session.VideoService.FindFiles(DateTime.Today, DateTime.Now, channel);
 ```
 
 Download video
@@ -75,18 +75,18 @@ Download video
         var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.dav";
 
         var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", "bin", name);
-        var downloadId = session.VideoService.DownloadByRecordFile(video, destinationPath);
+        var downloadId = session.VideoService.StartDownloadFile(video, destinationPath);
         if (downloadId > 0)
         {
             Console.WriteLine($"Downloading {destinationPath}");
             do
             {
                 await Task.Delay(5000);
-                var downloadProgress = session.VideoService.GetDownloadPos(downloadId);
+                var downloadProgress = session.VideoService.GetDownloadPosition(downloadId);
                 Console.WriteLine($"Downloading {downloadProgress} %");
                 if (downloadProgress.downloadSize == downloadProgress.totalSize)
                 {
-                    session.VideoService.StopDownload(downloadId);
+                    session.VideoService.StopDownloadFile(downloadId);
                     break;
                 }
                 else if (!downloadProgress.success)

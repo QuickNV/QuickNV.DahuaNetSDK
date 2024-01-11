@@ -12,32 +12,40 @@ namespace Dahua.Api.Abstractions
         /// <summary>
         /// Gets the videos.
         /// </summary>
+        /// <param name="startTime">The start time.</param>
+        /// <param name="endTime">The end time.</param>
         /// <param name="channelId">The channel identifier.</param>
+        /// <returns></returns>
+        IReadOnlyCollection<IRemoteFile> FindFiles(DateTime startTime, DateTime endTime, int channelId);
+
+        /// <summary>
+        /// Finds the files.
+        /// </summary>
         /// <param name="startTime">The start time.</param>
         /// <param name="endTime">The end time.</param>
         /// <returns></returns>
-        IReadOnlyCollection<IRemoteFile> GetVideos(int channelId, DateTime startTime, DateTime endTime);
+        IReadOnlyCollection<IRemoteFile> FindFiles(DateTime startTime, DateTime endTime);
 
         /// <summary>
         /// Downloads the by record file.
         /// </summary>
-        /// <param name="file">The file.</param>
-        /// <param name="path">The path.</param>
+        /// <param name="remoteFile">The file.</param>
+        /// <param name="destinationPath">The path.</param>
         /// <returns></returns>
-        long DownloadByRecordFile(IRemoteFile file, string path);
+        long StartDownloadFile(IRemoteFile remoteFile, string destinationPath);
 
         /// <summary>
         /// Gets the download position.
         /// </summary>
         /// <param name="fileHandler">The file handler.</param>
         /// <returns></returns>
-        (bool success, int totalSize, int downloadSize) GetDownloadPos(long fileHandler);
+        (bool success, int totalSize, int downloadSize) GetDownloadPosition(long fileHandler);
 
         /// <summary>
         /// Stops the download.
         /// </summary>
         /// <param name="fileHandler">The file handler.</param>
         /// <returns></returns>
-        bool StopDownload(long fileHandler);
+        bool StopDownloadFile(long fileHandler);
     }
 }

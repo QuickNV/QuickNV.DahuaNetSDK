@@ -23,7 +23,7 @@
      </dependencies>
   </metadata>
   <files>
-      <file src="bin\$configuration$\netstandard2.1\SDK\*.*" target="contentFiles\any\any\SDK"/>
+      <file src="bin\$configuration$\netstandard2.1\DahuaSDK\*.*" target="contentFiles\any\any\DahuaSDK"/>
       <file src="..\..\logo.png" target="images\" />
   </files>
 </package>

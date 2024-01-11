@@ -49,9 +49,9 @@ namespace Dahua.Api.Service
         /// <param name="startTime">The start time.</param>
         /// <param name="endTime">The end time.</param>
         /// <returns></returns>
-        public IReadOnlyCollection<IRemoteFile> GetVideos(DateTime startTime, DateTime endTime)
+        public IReadOnlyCollection<IRemoteFile> FindFiles(DateTime startTime, DateTime endTime)
         {
-            return GetVideos(0, startTime, endTime);
+            return FindFiles(startTime, endTime, 0);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Dahua.Api.Service
         /// <param name="startTime">The start time.</param>
         /// <param name="endTime">The end time.</param>
         /// <returns></returns>
-        public IReadOnlyCollection<IRemoteFile> GetVideos(int channelId, DateTime startTime, DateTime endTime)
+        public IReadOnlyCollection<IRemoteFile> FindFiles(DateTime startTime, DateTime endTime, int channelId)
         {
             var nriFileInfo = new NET_RECORDFILE_INFO[intFilesMaxCount];
 
@@ -103,12 +103,12 @@ namespace Dahua.Api.Service
         /// Downloads the by record file.
         /// </summary>
         /// <param name="file">The file.</param>
-        /// <param name="path">The path.</param>
+        /// <param name="destinationPath">The path.</param>
         /// <returns></returns>
-        public long DownloadByRecordFile(IRemoteFile file, string path)
+        public long StartDownloadFile(IRemoteFile file, string destinationPath)
         {
             NET_RECORDFILE_INFO fileInfo = default;
-            var strFileName = path.ToLower();
+            var strFileName = destinationPath.ToLower();
             if (!strFileName.EndsWith(".dav"))
             {
                 strFileName += ".dav";
@@ -119,6 +119,16 @@ namespace Dahua.Api.Service
             {
                 fileInfo = remoteFile.Original;
             }
+            else
+            {
+                fileInfo = new NET_RECORDFILE_INFO()
+                {
+                    starttime = NET_TIME.FromDateTime(file.Date),
+                    endtime = NET_TIME.FromDateTime(file.Date.AddSeconds(file.Duration)),
+                    filename = System.Text.Encoding.UTF8.GetBytes(file.Name),
+                    size = file.Size,
+                };
+            }
 
            return SdkHelper.InvokeSDK(() => CLIENT_DownloadByRecordFile(session.UserId, ref fileInfo, strFileName, downLoadFun, IntPtr.Zero));
         }
@@ -128,7 +138,7 @@ namespace Dahua.Api.Service
         /// </summary>
         /// <param name="fileHandler">The file handler.</param>
         /// <returns></returns>
-        public (bool success, int totalSize, int downloadSize) GetDownloadPos(long fileHandler)
+        public (bool success, int totalSize, int downloadSize) GetDownloadPosition(long fileHandler)
         {
             int totalSize = 0;
             int downloadSize = 0;
@@ -141,7 +151,7 @@ namespace Dahua.Api.Service
         /// </summary>
         /// <param name="fileHandler">The file handler.</param>
         /// <returns></returns>
-        public bool StopDownload(long fileHandler)
+        public bool StopDownloadFile(long fileHandler)
         {
             return SdkHelper.InvokeSDK(() => CLIENT_StopDownload(fileHandler), throwException: false);
         }
@@ -159,7 +169,7 @@ namespace Dahua.Api.Service
             {
                 if (0xFFFFFFFF == dwDownLoadSize || 0xFFFFFFFE == dwDownLoadSize)
                 {
-                    StopDownload(playHandler);
+                    StopDownloadFile(playHandler);
                 }
             }
         }
@@ -213,5 +223,6 @@ namespace Dahua.Api.Service
         /// <returns>true: success; false: failure</returns>
         [DllImport(LIBRARYNETSDK)]
         private static extern bool CLIENT_StopDownload(long lFileHandle);
+
     }
 }

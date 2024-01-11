@@ -3,7 +3,7 @@
 namespace Dahua.Api.Abstractions
 {
     /// <summary>
-    /// 
+    ///  ConfigService
     /// </summary>
     public interface IConfigService
     {

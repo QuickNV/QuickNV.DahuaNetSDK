@@ -1,4 +1,4 @@
-﻿namespace QuickNV.DahuaNetSDK
+﻿namespace Dahua.Api.Struct.Picture
 {
     /// <summary>
     /// Picture encoding format

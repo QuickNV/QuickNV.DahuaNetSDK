@@ -3,7 +3,7 @@
     /// <summary>
     /// Configuration type
     /// </summary>
-    public enum EM_DEV_CFG_TYPE
+    internal enum EM_DEV_CFG_TYPE
     {
         /// <summary>
         /// Device property setup

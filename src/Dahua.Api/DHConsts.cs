@@ -2,10 +2,10 @@
 {
     internal class DHConsts
     {
-        public const string LIBRARYNETSDK = @"SDK\dhnetsdk.dll";
+        public const string LIBRARYNETSDK = @"DahuaSDK\dhnetsdk.dll";
 
-        public const string LIBRARYCONFIGSDK = @"SDK\dhconfigsdk.dll";
+        public const string LIBRARYCONFIGSDK = @"DahuaSDK\dhconfigsdk.dll";
 
-        public const string LIBRARYPLAYSDK = @"SDK\dhplay.dll";
+        public const string LIBRARYPLAYSDK = @"DahuaSDK\dhplay.dll";
     }
 }

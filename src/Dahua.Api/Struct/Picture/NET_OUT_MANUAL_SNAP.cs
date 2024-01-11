@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using QuickNV.DahuaNetSDK;
 
 namespace Dahua.Api.Struct.Picture
 {

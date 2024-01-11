@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Dahua.Api;
 
-var host = "192.168.1.64";
+var host = "192.168.1.63";
 var port = 37777;
 var user = "admin";
 var password = "password";
@@ -24,7 +24,7 @@ try
     Console.WriteLine("Device type: " + session.ConfigService.GetDeviceType());
 
 
-    var videos = session.VideoService.GetVideos(0, DateTime.Today, DateTime.Now);
+    var videos = session.VideoService.FindFiles(DateTime.Today, DateTime.Now);
 
 
     Console.WriteLine($"Found {videos.Count} videos");
@@ -34,18 +34,18 @@ try
         var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.dav";
 
         var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", "bin", name);
-        var downloadId = session.VideoService.DownloadByRecordFile(video, destinationPath);
+        var downloadId = session.VideoService.StartDownloadFile(video, destinationPath);
         if (downloadId > 0)
         {
             Console.WriteLine($"Downloading {destinationPath}");
             do
             {
                 await Task.Delay(5000);
-                var downloadProgress = session.VideoService.GetDownloadPos(downloadId);
+                var downloadProgress = session.VideoService.GetDownloadPosition(downloadId);
                 Console.WriteLine($"Downloading {downloadProgress} %");
                 if (downloadProgress.downloadSize == downloadProgress.totalSize)
                 {
-                    session.VideoService.StopDownload(downloadId);
+                    session.VideoService.StopDownloadFile(downloadId);
                     break;
                 }
                 else if (!downloadProgress.success)
