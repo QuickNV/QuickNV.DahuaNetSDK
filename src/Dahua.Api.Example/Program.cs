@@ -31,7 +31,7 @@ try
     foreach (var video in videos)
     {
         Console.WriteLine(video.Name);
-        var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.dav";
+        var name = $"{video.Date.ToString(DateFormat)}_{video.Duration}.mp4";
 
         var destinationPath = Path.Combine(@$"C:\Users\{Environment.UserName}\Desktop", "bin", name);
         var downloadId = session.VideoService.StartDownloadFile(video, destinationPath);

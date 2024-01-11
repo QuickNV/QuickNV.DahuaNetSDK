@@ -49,7 +49,7 @@ namespace Dahua.Api.Helpers
         /// <returns></returns>
         public static string ToVideoFileNameString(this RemoteFile file)
         {
-            return $"{file.Date.ToString(DateFormat)}_{file.Date.AddSeconds(file.Duration).ToString(TimeFormat)}.dav";
+            return $"{file.Date.ToString(DateFormat)}_{file.Date.AddSeconds(file.Duration).ToString(TimeFormat)}.mp4";
         }
 
         private static string FormatBytes(this long bytes)

@@ -116,9 +116,9 @@ namespace Dahua.Api.Service
         {
             NET_RECORDFILE_INFO fileInfo = default;
             var strFileName = destinationPath.ToLower();
-            if (!strFileName.EndsWith(".dav"))
+            if (!strFileName.EndsWith(".mp4"))
             {
-                strFileName += ".dav";
+                strFileName += ".mp4";
             }
 
             var remoteFile = file as RemoteFile;
