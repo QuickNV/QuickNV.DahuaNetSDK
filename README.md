@@ -15,7 +15,7 @@ DahuaApi.Init();
 
 Login. Returns [DahuaApi](https://github.com/vov4uk/Dahua.Api/blob/main/src/Dahua.Api/DahuaApi.cs)
 ```cs
-var session = DahuaApi.Login("192.168.1.64", 8000, "admin", "pass");
+var session = DahuaApi.Login("192.168.1.63", 37777, "admin", "pass");
 ```
 
 Logout
